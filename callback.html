@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization Complete - TikTok Research</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .success { color: green; font-size: 24px; }
+        .info { color: #666; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="success">✅ Authorization Successful!</div>
+    <div class="info">
+        <p>Thank you for authorizing our research application.</p>
+        <p>You can now close this window and return to the research tool.</p>
+        <p><small>This is a callback page for TikTok Login Kit integration.</small></p>
+    </div>
+    
+    <script>
+        // Получаем параметры из URL (если нужно обработать код авторизации)
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code');
+        const state = urlParams.get('state');
+        
+        if (code) {
+            console.log('Authorization code received:', code.substring(0, 10) + '...');
+            // Здесь в реальном приложении вы бы отправили код на свой сервер
+            // Но для статического сайта просто показываем сообщение
+        }
+        
+        // Можно автоматически закрыть окно через 3 секунды
+        setTimeout(() => {
+            // window.close(); // Раскомментируйте, если это popup
+        }, 3000);
+    </script>
+</body>
+</html>
